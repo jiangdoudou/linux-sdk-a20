@@ -254,7 +254,7 @@ spi_mosi            = port:PA02<3><default><default><default>
 spi_miso            = port:PA03<3><default><default><default>
 
 [spi2_para]
-spi_used            = 0
+spi_used            = 1
 spi_cs_bitmap       = 1
 spi_cs0             = port:PC19<3><default><default><default>
 spi_cs1             = port:PB13<2><default><default><default>
@@ -270,7 +270,17 @@ spi_cs1             = port:PA09<3><default><default><default>
 spi_sclk            = port:PA06<3><default><default><default>
 spi_mosi            = port:PA07<3><default><default><default>
 spi_miso            = port:PA08<3><default><default><default>
-
+[spi_devices]
+spi_dev_num = 1
+[spi_board0]
+modalias = "spidev"
+max_speed_hz = 12000000
+bus_num = 2
+chip_select = 0
+mode = 3
+irq_gpio = 3
+full_duplex = 0
+manual_cs = 0
 ;-------------------------------------------------------------------------------
 ;capacitor tp configuration
 ;external int function
