@@ -1,0 +1,17 @@
+[mbr]
+size = 16384
+
+[partition_start]
+
+[partition]
+    name         = bootloader
+    size         = 131072
+    downloadfile = "bootloader.fex"
+    verify       = 1
+
+[partition]
+    name         = rootfs
+    size         = 7549747
+    downloadfile = "rootfs.fex"
+    verify       = 1
+
