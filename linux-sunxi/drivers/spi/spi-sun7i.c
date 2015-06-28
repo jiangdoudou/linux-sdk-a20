@@ -2105,7 +2105,7 @@ static int __init spi_sun7i_init(void)
     }
 
 //    sun7i_spi_norflash();
-
+     //spi_used ="spi2_para"
     if (spi_used & SPI0_USED_MASK)
         platform_device_register(&sun7i_spi0_device);
     if (spi_used & SPI1_USED_MASK)
