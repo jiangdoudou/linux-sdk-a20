@@ -42,7 +42,9 @@ static void led_heartbeat_function(unsigned long data)
 		 * current (1min) load. It goes through the points
 		 * f(0)=1260, f(1)=860, f(5)=510, f(inf)->300.
 		 */
-		heartbeat_data->period = 300 +
+	//modify by jiangdou
+	//________|￣|__|￣|________|￣|__|￣|__________  modify to _________________|￣|_________________|￣|_________________
+		heartbeat_data->period = 600 + 
 			(6720 << FSHIFT) / (5 * avenrun[0] + (7 << FSHIFT));
 		heartbeat_data->period =
 			msecs_to_jiffies(heartbeat_data->period);
@@ -57,7 +59,7 @@ static void led_heartbeat_function(unsigned long data)
 	case 2:
 		delay = msecs_to_jiffies(70);
 		heartbeat_data->phase++;
-		brightness = led_cdev->max_brightness;
+		//brightness = led_cdev->max_brightness;//modify by jiangdou
 		break;
 	default:
 		delay = heartbeat_data->period - heartbeat_data->period / 4 -
